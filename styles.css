@@ -1,0 +1,58 @@
+/* Basic Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+/* Start Tracking Spending Page */
+
+#startTrackingPage,
+#showHistoryPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#startTrackingPage input,
+#startTrackingPage button,
+#showHistoryPage button {
+    margin-bottom: 10px;
+}
+
+#spendingHistory {
+    text-align: left;
+    max-width: 600px;
+}
+
+.edit-icon,
+.delete-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 600px) {
+    #spendingHistory {
+        font-size: 14px;
+    }
+}
