@@ -14,9 +14,9 @@
         <button onclick="showSpendingHistory()">Show Spending History</button>
     </div>
 
-    <div id="startTrackingPage" style="display: none;">
+    <div id="startTrackingPage" class="page">
         <h2>Start Tracking Spending</h2>
-        <form id="spendingForm">
+        <form id="spendingForm" class="input-form">
             <label for="storeName">Store Name:</label>
             <input type="text" id="storeName" required><br><br>
             <label for="amountSpent">Amount Spent (£):</label>
@@ -25,12 +25,15 @@
             <input type="date" id="dateSpent" required><br><br>
             <button type="button" onclick="saveSpending()">Save</button>
         </form>
-        <p id="errorDisplay" style="color: red;"></p>
+        <p id="errorDisplay" class="error"></p>
         <button onclick="backToHomePage()">Back to Home</button>
     </div>
 
-    <div id="showHistoryPage" style="display: none;">
-        <div id="spendingHistory"></div>
+    <div id="showHistoryPage" class="page">
+        <div class="content-center">
+            <h2>Spending History</h2>
+            <div id="spendingHistory" class="history-section"></div>
+        </div>
         <button onclick="backToHomePage()">Back to Home</button>
     </div>
 

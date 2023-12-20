@@ -1,5 +1,3 @@
-// Functionality for the Spending Tracker app
-
 function showStartTracking() {
     document.querySelector('.container').style.display = 'none';
     document.getElementById('startTrackingPage').style.display = 'block';
@@ -106,7 +104,7 @@ function showSpendingHistory() {
 }
 
 function backToHomePage() {
-    document.querySelector('.container').style.display = 'block';
+    document.querySelector('.container').style.display = 'flex';
     document.getElementById('startTrackingPage').style.display = 'none';
     document.getElementById('showHistoryPage').style.display = 'none';
 }
