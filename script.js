@@ -1,6 +1,11 @@
+window.addEventListener("load", function() {
+    document.getElementById('spendingTracker').style.display = 'none';
+    document.getElementById('showHistoryPage').style.display = 'none';
+});
+
 function showStartTracking() {
     document.querySelector('.container').style.display = 'none';
-    document.getElementById('startTrackingPage').style.display = 'block';
+    document.getElementById('spendingTracker').style.display = 'block';
     document.getElementById('showHistoryPage').style.display = 'none';
 
     // Set the maximum date for the input to today's date
@@ -44,14 +49,14 @@ function saveSpending() {
 
 function showSpendingHistory() {
     document.querySelector('.container').style.display = 'none';
-    document.getElementById('startTrackingPage').style.display = 'none';
+    document.getElementById('spendingTracker').style.display = 'none';
     document.getElementById('showHistoryPage').style.display = 'block';
 
     const spendingHistory = JSON.parse(localStorage.getItem('spending')) || [];
 
     spendingHistory.sort((a, b) => new Date(a.dateSpent) - new Date(b.dateSpent));
 
-    let historyHTML = '<h2>Spending History</h2>';
+    let historyHTML = '<h2>Spending History</h2><br>';
     let monthTotal = {};
     let yearTotal = {};
     let allTimeTotal = 0;
@@ -92,7 +97,7 @@ function showSpendingHistory() {
         historyHTML += `<div>Total spent in ${currentMonth}: £${monthTotal[currentMonth].toFixed(2)}</div>`;
     }
 
-    let yearTotalHTML = '<h3>Total Spent per Year</h3>';
+    let yearTotalHTML = '<br><h3>Total Spent per Year</h3>';
     for (const year in yearTotal) {
         yearTotalHTML += `<div>Total spent in ${year}: £${yearTotal[year].toFixed(2)}</div>`;
     }
@@ -105,7 +110,7 @@ function showSpendingHistory() {
 
 function backToHomePage() {
     document.querySelector('.container').style.display = 'flex';
-    document.getElementById('startTrackingPage').style.display = 'none';
+    document.getElementById('spendingTracker').style.display = 'none';
     document.getElementById('showHistoryPage').style.display = 'none';
 }
 
